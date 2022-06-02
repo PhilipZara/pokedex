@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="icon" href="../static/pokedex-favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>Pokedex</title>
+</head>
+<body>
+    <div>
+    <h1>Pokemon</h1>
+
+
+    {% if pokedex %}
+        <h1>Your Pokemon is: {{ pokedex.name.capitalize }}</h1>
+        <img src="{{ pokedex.sprite }}" alt="pokemon_image" width="300" height="300">
+        <div class="wrapper">
+            <div class="div1">
+                <h1>Abilities:</h1>
+            </div>
+            <div class="div2">
+                {% for ability in abilities %}
+                    <h2> {{ ability }}<br></h2>
+                {% endfor %}
+                <br>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="div1">
+                <h1>Stats:<br></h1>
+            </div>
+            <div class="div2">
+                {% for stat in stats %}
+                    <h2> {{ stat }}<br></h2>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <h1>{{ not_valid }}</h1>
+    {% endif %}
+    </div>
+</body>
+</html>

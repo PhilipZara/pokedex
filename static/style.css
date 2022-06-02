@@ -1,0 +1,48 @@
+body {
+    background-image: url('pokedex_background.png');
+}
+
+h1 {
+    color: white;
+}
+
+div {
+    text-align: center;
+}
+
+img {
+    align-self: center;
+}
+
+h2 {
+    color: white;
+}
+
+table {
+    align-self: center;
+}
+
+.wrapper {
+}
+.div1 {
+    display: inline-block;
+
+    vertical-align: top;
+    margin-right: 20px;
+}
+.div2 {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+input[type=search]{
+    margin-top: 300px;
+    align-self: center;
+    width: 20%;
+    height: 25px;
+}
+
+input[type=submit]{
+    height: 50px;
+    margin-top: 500px;
+}
