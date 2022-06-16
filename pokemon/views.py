@@ -41,7 +41,7 @@ def home(request):
 def pokemon(request):
     if request.method == "POST":
         searched = request.POST["searched"].lower()
-        if Pokedex.objects.filter(name__contains=searched):
+        if Pokedex.objects.filter(name=searched):
             pokedex = Pokedex.objects.get(name=searched)
             abilities = pokedex.abilities.rsplit("\n")
             abilities.pop()
