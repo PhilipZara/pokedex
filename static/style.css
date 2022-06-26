@@ -29,3 +29,7 @@ input[type=submit]{
     height: 50px;
     margin-top: 100px;
 }
+
+.success_message{
+    color: white;
+}

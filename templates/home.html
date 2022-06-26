@@ -11,9 +11,20 @@
 <div>
 <h1>Pokedex</h1>
 
+    {% for message in messages %}
+        <div class="success_message" role="alert">
+            <h2>{{ message }}</h2>
+        </div>
+    {% endfor %}
+
 <form method='post' action="{% url 'pokemon' %}">
     {% csrf_token %}
-    <input type="search" placeholder="Search Pokemon" aria-label="Search" name="searched">
+    <input type="search" list="pokemons" placeholder="Search Pokemon" aria-label="Search" name="searched">
+        <datalist id="pokemons">
+            {% for pokemon in pokemons %}
+                <option value="{{ pokemon.name }}"></option>
+            {% endfor %}
+        </datalist>
     <button type="submit">Search</button>
 </form>
 
@@ -21,5 +32,6 @@
     <input type="submit" value="Update Database" name="Update Database"/>
 </form>
 </div>
+
 </body>
 </html>
